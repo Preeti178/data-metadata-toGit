@@ -40,11 +40,11 @@ node {
 			}else{
 			   //rmsg = bat returnStdout: true, script: "sfdx force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
 				//metadata retrieve
-				//rmsg = bat returnStdout: true, script: "sfdx force:source:retrieve -u ${HUB_ORG} -x ./force-app/main/default//package.xml -w 10"
+				rmsg = bat returnStdout: true, script: "sfdx force:source:retrieve -u ${HUB_ORG} -x ./force-app/main/default//package.xml -w 10"
 				// data export
-				//rmsg1 = bat returnStdout: true, script: "sfdx force:data:tree:export -q queryFile -d ./outputData -p -u ${HUB_ORG}"
+				rmsg1 = bat returnStdout: true, script: "sfdx force:data:tree:export -q queryFile -d ./force-app/main/default/outputData -p -u ${HUB_ORG}"
 				
-				rmsg = bat returnStdout: true, script: "sfdx force:package:create -n myPackage -t Unlocked -r force-app"
+				rmsg2 = bat returnStdout: true, script: "sfdx force:package:create -n myPackage -t Unlocked -r ./force-app/main/default"
 			}
 			  
             printf rmsg
