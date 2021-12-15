@@ -45,7 +45,7 @@ node {
 				rmsg1 = bat returnStdout: true, script: "sfdx force:data:tree:export -q queryFile -d ./force-app/main/default/outputData -p -u ${HUB_ORG}"
 				
 				//rmsg2 = bat returnStdout: true, script: "sfdx force:package:create -n myPackage -t Unlocked -r /force-app/main/default"
-				bat'git archive --format zip --output /force-app/main/default.zip master'
+				bat'git archive --format zip --output /force-app/main/default.zip main'
 			}
 			  
             printf rmsg
