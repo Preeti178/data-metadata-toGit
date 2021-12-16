@@ -54,7 +54,7 @@ node {
             println('Hello from a Job DSL script!')
             println(rmsg)
 		 println(rmsg1)
-		 println(rmsg2)
+		 //println(rmsg2)
         }
     }
 }
