@@ -51,7 +51,7 @@ node {
 				bat 'git config --global user.email "preeti.singh@metacube.com"'
 				bat 'git config --global user.name "Preeti178"'
 				bat 'git reset'
-				bat 'git add -A force-app/main/default'
+				bat 'git add -A force-app/main/default/.'
 				bat 'git commit -m "push to git"'
 		
  bat 'git push -f https://github.com/Preeti178/SFDX-projectFinal.git HEAD:main'
