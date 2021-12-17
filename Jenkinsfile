@@ -45,8 +45,16 @@ node {
 				rmsg1 = bat returnStdout: true, script: "sfdx force:data:tree:export -q queryFile -d ./force-app/main/default/outputData -p -u ${HUB_ORG}"
 				
 				//rmsg2 = bat returnStdout: true, script: "sfdx force:package:create -n myPackage -t Unlocked -r /force-app/main/default"
-				bat'git archive --format=zip -o default.zip HEAD'
+				//bat'git archive --format=zip -o default.zip HEAD'
 				//bat'git archive --format zip --output Jenkins/.jenkins/workspace/data-metadata-toGit_main/force-app/main/default.zip main'
+				withCredentials([gitUsernamePassword(credentialsId: 'c7fff462-5d29-472d-abb0-b653de59d291', gitToolName: 'Default')]) {
+				bat 'git config --global user.email "preeti.singh@metacube.com"'
+				bat 'git config --global user.name "Preeti178"'
+				bat 'git reset'
+				bat 'git add -A force-app/main/default'
+				bat 'git commit -m "push to git"'
+		
+ bat 'git push -f https://github.com/Preeti178/SFDX-projectFinal.git HEAD:main'
 				
 			}
 			  
