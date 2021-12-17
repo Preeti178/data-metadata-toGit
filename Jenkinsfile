@@ -54,7 +54,7 @@ node {
 				bat 'git add -A force-app/main/default/.'
 				bat 'git commit -m "push to git"'
 		
- bat 'git push -f https://github.com/Preeti178/SFDX-projectFinal.git HEAD:main'
+ bat 'git push -f https://github.com/Preeti178/data-metadata-toGit.git HEAD:main'
 				
 			}
 			  
